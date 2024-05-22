@@ -5,6 +5,7 @@ from RPA.HTTP import HTTP
 from RPA.Tables import Tables
 from RPA.PDF import PDF
 from RPA.Archive import Archive
+import RPA.Browser.Selenium as pl
 
 @task
 def order_robots_from_RobotSpareBin():
@@ -15,6 +16,7 @@ def order_robots_from_RobotSpareBin():
     Embeds the screenshot of the robot to the PDF receipt.
     Creates ZIP archive of the receipts and the images.
     """
+    play = pl
     # Open Website
     browser.configure(slowmo=1000,)
     open_robot_order_website()
